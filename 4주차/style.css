@@ -7,7 +7,11 @@
   height: 2000px;
   background-color: gray;
   margin: 0 auto;
-  padding-top: 250px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+
 }
 
 .box {
@@ -15,13 +19,15 @@
   height: 400px;
   background-color: white;
   border: 6px solid black;
-  margin: 0 auto;
   position: relative;
+  transition: opacity 500ms ease-in;
 }
-
+.box:hover{
+  opacity: 0%;
+}
 .imgimg {
   width: 400px;
-}
+} 
 
 .pants {
   position: absolute;
@@ -42,10 +48,7 @@
   width: 290px;
 
 }
-.ballcap {
-}
-.boxing {
-}
+
 .coffee {
   position: absolute;
   top: 170px;
@@ -62,12 +65,12 @@
   z-index: 40;
 
 }
-.hanbok {
+/* .hanbok {
 }
 .hamburger {
 }
 .jacket_c {
-}
+} */
 .jacket_o {
   position: absolute;
   top: 110px;
