@@ -1,20 +1,34 @@
 const button = document.querySelector("#추가버튼");
-const input = document.querySelector("#입력값");
+const input = document.querySelector("#입력창");
 const todos = document.querySelector("#할일들");
+const reset =document.querySelector("#초기화");
+const newTodos= []; //newTodo 객체를 담는 배열 newTodos
 
 button.addEventListener("click", () => {
   const value = input.value;
-  const p = document.createElement("p");
-  p.innerText = value;
-  todos.appendChild(p);
+
+  const newTodo = document.createElement("p");
+  newTodos.push(newTodo);
+
+  newTodo.innerText = value;
+  todos.appendChild(newTodo);
 
   input.value = "";
 
-  p.addEventListener("click", () => {
-    if (p.className !== "done") {
-      p.className = "done";
+  newTodo.addEventListener("click", () => {
+    if (newTodo.className !== "done") {
+      newTodo.className = "done";
     } else {
-      p.className = "";
+      newTodo.className = "";
     }
   });
+
+  reset.addEventListener("click",() =>{
+    newTodos.forEach((newTodo) => {
+      todos.removeChild(newTodo);
+      todos.ariaHasPopup(newTodo);
+    });
+  });
+
 });
+

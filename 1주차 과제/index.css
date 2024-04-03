@@ -3,8 +3,8 @@ body {
   font-family: "Noto Sans KR";
 }
 
-p {
-  color: #800080;
+#할일들 > p {
+  cursor: pointer;
 }
 button {
   background-color: skyblue;
